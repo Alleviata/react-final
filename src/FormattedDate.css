@@ -1,10 +1,13 @@
 .formatDate {
   font-weight: 600;
   font-size: 1.5rem;
+  color: #2c353f;
+  margin-bottom: 10px;
 }
 
 .time {
   font-size: 1rem;
   font-weight: 400;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(26, 45, 70, 0.7);
+  font-style: italic;
 }

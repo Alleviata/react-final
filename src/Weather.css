@@ -13,10 +13,10 @@ p::first-letter {
 }
 
 h1 {
-  margin: 20px 0;
-  line-height: 29px;
+  margin: 25px 0;
+  line-height: 47px;
   font-weight: 700;
-  font-size: 2.5rem;
+  font-size: 45px;
 }
 
 ul {
@@ -24,17 +24,13 @@ ul {
   padding: 0;
 }
 
-li {
+li,
+.description {
   margin-bottom: 5px;
   color: #526984;
   font-size: 0.8rem;
   line-height: 20px;
   list-style: none;
-}
-
-.icon-big {
-  margin-right: 5px;
-  width: 100px;
 }
 
 footer {
@@ -51,14 +47,8 @@ footer {
   max-width: 800px;
 }
 
-.date,
-.description,
 .tempWithUnits {
   font-size: 0.9rem;
-}
-
-.description {
-  font-style: italic;
 }
 
 .currTemp {

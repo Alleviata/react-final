@@ -2,13 +2,11 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
 import FormattedDate from "./FormattedDate";
+import IconManager from "./IconManager";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
-  let [iconLink, setIconLink] = useState(
-    `http://openweathermap.org/img/wn/04d@2x.png`
-  );
   let [visibility, setVisibility] = useState("hidden");
 
   function showWeather(response) {
@@ -23,9 +21,6 @@ export default function Weather(props) {
       date: new Date(response.data.dt * 1000),
       icon: response.data.weather[0].icon,
     });
-    setIconLink(
-      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-    );
   }
 
   function search() {
@@ -48,6 +43,9 @@ export default function Weather(props) {
     return (
       <div className="weather">
         <div className="weather-app">
+          <div>
+            <FormattedDate date={weatherData.date} />{" "}
+          </div>
           <form className="searchForm mb-4" onSubmit={handleSubmit}>
             <div className="row">
               <div className="col-9">
@@ -70,26 +68,26 @@ export default function Weather(props) {
 
           <div className="row">
             <div className="col-md-4">
-              <div>
-                <FormattedDate date={weatherData.date} />{" "}
-              </div>
               <h1 className="currCity">{weatherData.city}</h1>
-              <p className="description">{weatherData.description}</p>
             </div>
             <div className="col-md-8">
               <div className="row">
                 <div className="col-md-6">
-                  <img src={iconLink} alt="weather icon" id="icon-big" />
-                  <span className="tempWithUnits">
-                    <span className="currTemp">{weatherData.temperature}</span>
-                    <span className="units">°C</span>
-                  </span>
+                  <div className="d-flex">
+                    <div>
+                      <IconManager code={weatherData.icon} size={70} />
+                    </div>
+
+                    <div>{weatherData.temperature}</div>
+                  </div>
                 </div>
+
                 <div className="col-md-6">
                   <ul>
                     <li>Humidity: {weatherData.humidity}%</li>
                     <li>Wind: {weatherData.wind} km/h</li>
                   </ul>
+                  <p className="description">{weatherData.description}</p>
                 </div>
               </div>
             </div>
