@@ -11,6 +11,7 @@ export default function Weather(props) {
   let [visibility, setVisibility] = useState("hidden");
 
   function showWeather(response) {
+    setVisibility("hidden");
     setWeatherData({
       ready: true,
       temperature: Math.round(response.data.main.temp),
