@@ -3,6 +3,7 @@ import axios from "axios";
 import "./Weather.css";
 import FormattedDate from "./FormattedDate";
 import IconManager from "./IconManager";
+import TempConversion from "./TempConversion";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -73,12 +74,14 @@ export default function Weather(props) {
             <div className="col-md-8">
               <div className="row">
                 <div className="col-md-6">
-                  <div className="d-flex">
+                  <div className="d-flex mt-1">
                     <div>
-                      <IconManager code={weatherData.icon} size={70} />
+                      <IconManager code={weatherData.icon} size={40} />
                     </div>
 
-                    <div>{weatherData.temperature}</div>
+                    <div>
+                      <TempConversion celsius={weatherData.temperature} />
+                    </div>
                   </div>
                 </div>
 

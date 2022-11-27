@@ -13,7 +13,7 @@ p::first-letter {
 }
 
 h1 {
-  margin: 25px 0;
+  margin: 5px 0;
   line-height: 47px;
   font-weight: 700;
   font-size: 45px;
@@ -47,20 +47,17 @@ footer {
   max-width: 800px;
 }
 
-.tempWithUnits {
-  font-size: 0.9rem;
-}
-
 .currTemp {
-  font-size: 34px;
+  font-size: 40px;
   line-height: 1;
-  font-weight: 400;
+  font-weight: 500;
+  padding-left: 5px;
 }
 
-.units {
+.unit {
   position: relative;
   font-size: 16px;
-  top: -13px;
+  top: -16px;
 }
 
 .weather-forecast {
