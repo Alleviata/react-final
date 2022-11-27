@@ -1,0 +1,12 @@
+.App {
+  height: 100vh !important;
+  background: linear-gradient(-225deg, #77ffd2 0%, #6297db 48%, #1eecff 100%);
+  background-repeat: no-repeat;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #2c353f;
+  text-align: left;
+  padding: 30px;
+}
