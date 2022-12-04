@@ -5,15 +5,16 @@
 
 .forecast-date {
   font-size: 1.3rem;
+  padding: 5px 0;
 }
 
 .forecast-temp {
   color: #2c353f;
   font-size: 0.8rem;
+  padding: 5px 0;
 }
 
 .single-forecast {
-  margin: 5px;
   padding: 7px 5px;
   border: 1px solid #1eecff;
   box-shadow: 0 8px 6px -6px black;
