@@ -110,10 +110,6 @@ footer {
   }
 }
 
-.icon-small {
-  width: 64px;
-}
-
 .weather-forecast .container {
   display: flex;
   justify-content: space-between;

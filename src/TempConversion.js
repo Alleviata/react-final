@@ -15,8 +15,8 @@ export default function TempConversion(props) {
       <div>
         <span className="currTemp">{Math.round(props.celsius)}</span>
         <span className="unit">
-          °C |{" "}
-          <a href="/" onClick={convertToF}>
+          °C{" "}
+          <a href="/" onClick={convertToF} className="hidden">
             °F
           </a>
         </span>

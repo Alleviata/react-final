@@ -4,14 +4,13 @@ import "./Weather.css";
 import FormattedDate from "./FormattedDate";
 import IconManager from "./IconManager";
 import TempConversion from "./TempConversion";
+import DailyForecast from "./DailyForecast";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
-  let [visibility, setVisibility] = useState("hidden");
 
   function showWeather(response) {
-    setVisibility("hidden");
     setWeatherData({
       ready: true,
       temperature: Math.round(response.data.main.temp),
@@ -21,6 +20,7 @@ export default function Weather(props) {
       city: response.data.name,
       date: new Date(response.data.dt * 1000),
       icon: response.data.weather[0].icon,
+      coord: response.data.coord,
     });
   }
 
@@ -29,7 +29,6 @@ export default function Weather(props) {
     let unit = "metric";
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
     axios.get(url).then(showWeather);
-    console.log(url);
   }
 
   function handleSubmit(event) {
@@ -66,7 +65,6 @@ export default function Weather(props) {
               </div>
             </div>
           </form>
-
           <div className="row">
             <div className="col-md-4">
               <h1 className="currCity">{weatherData.city}</h1>
@@ -95,7 +93,8 @@ export default function Weather(props) {
               </div>
             </div>
           </div>
-
+          <DailyForecast coordinates={weatherData.coord} />
+          {/*
           <div className={visibility}>
             <div className="weather-forecast">
               <div className="container">
@@ -186,6 +185,7 @@ export default function Weather(props) {
               </div>
             </div>
           </div>
+          */}
         </div>
         <footer>
           <a href="https://github.com/Alleviata/react-final">
